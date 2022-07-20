@@ -46,13 +46,13 @@ func main() {
 			Description: "first demo",
 		}
 		if *website == "github" {
-			h.Resources = app.GitHubPages("go_h5app_demoD")
+			h.Resources = app.GitHubPages("go_h5app_demo")
 		}
-		e := app.GenerateStaticWebsite("dist", h)
+		e := app.GenerateStaticWebsite("docs", h)
 		if e != nil {
 			log.Panicln(e)
 		} else {
-			log.Println("生成到 ./dist")
+			log.Println("生成到 ./docs")
 		}
 	} else {
 		panic("type: online/offline")
