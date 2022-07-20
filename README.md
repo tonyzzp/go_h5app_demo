@@ -1,5 +1,7 @@
 # go_h5app_demo
 
+访问  https://tonyzzp.github.io/go_h5app_demo/
+
 [go-app](https://github.com/maxence-charriere/go-app)
 
 
