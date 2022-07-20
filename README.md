@@ -4,7 +4,7 @@
 
 
 ### build_offline.bat
-编译为静态网站，放在dist目录
+编译为静态网站，放在 docs 目录
 
 
 ### build_online.bat
