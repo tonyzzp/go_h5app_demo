@@ -29,6 +29,7 @@ func main() {
 	app.RunWhenOnBrowser()
 
 	var t = flag.String("type", "online", "版本 online/offline")
+	var website = flag.String("website", "", "如果部署到github,此值填github")
 	flag.Parse()
 	if *t == "online" {
 		http.Handle("/", &app.Handler{
@@ -40,10 +41,14 @@ func main() {
 			log.Panicln(e)
 		}
 	} else if *t == "offline" {
-		e := app.GenerateStaticWebsite("dist", &app.Handler{
+		var h = &app.Handler{
 			Name:        "go_h5app_demo",
 			Description: "first demo",
-		})
+		}
+		if *website == "github" {
+			h.Resources = app.GitHubPages("go_h5app_demoD")
+		}
+		e := app.GenerateStaticWebsite("dist", h)
 		if e != nil {
 			log.Panicln(e)
 		} else {
