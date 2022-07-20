@@ -1,6 +1,5 @@
-CHCP 65001
 @echo off
-echo 编译离线版本
+echo compile offline
 set GOOS=js
 set GOARCH=wasm
 go build -o docs/web/app.wasm

@@ -1,6 +1,5 @@
-CHCP 65001
 @echo off
-echo 编译在线版本
+echo compile online
 set GOOS=js
 set GOARCH=wasm
 go build -o web/app.wasm
