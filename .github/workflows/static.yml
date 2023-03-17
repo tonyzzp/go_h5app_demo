@@ -34,6 +34,8 @@ jobs:
 
       - name: build
         run: |
+          rm -rf docs
+          ls -la
           set GOOS=js
           set GOARCH=wasm
           go build -o docs/web/app.wasm
@@ -41,7 +43,9 @@ jobs:
           set GOARCH=
           go build -o app .
           ./app -type offline -website github
-          
+          ls -la
+
+     
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
